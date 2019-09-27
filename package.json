@@ -1,0 +1,41 @@
+{
+    "name": "@oauth-everything/passport-discord",
+    "version": "1.0.1",
+    "description": "Discord OAuth 2.0 strategy for Passport.js",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "lint": "eslint ./src/**/*.ts",
+        "build": "tsc -p .",
+        "clean": "rimraf dist",
+        "build-full": "npm run clean && npm run lint && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/oauth-everything/passport-discord.git"
+    },
+    "keywords": [
+        "oauth",
+        "discord",
+        "passport"
+    ],
+    "author": "Tyler Schrock <tschrock123@gmail.com>",
+    "license": "MPL-2.0",
+    "bugs": {
+        "url": "https://github.com/oauth-everything/passport-discord/issues"
+    },
+    "homepage": "https://github.com/oauth-everything/passport-discord",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.3.1",
+        "@typescript-eslint/parser": "^2.3.1",
+        "eslint": "^6.4.0",
+        "rimraf": "^3.0.0",
+        "typescript": "^3.6.3"
+    },
+    "dependencies": {
+        "@oauth-everything/oauth2-types": "^1.0.1",
+        "@oauth-everything/profile": "^1.0.0",
+        "@types/passport-oauth2": "^1.4.8",
+        "passport-oauth2": "^1.5.0"
+    }
+}
