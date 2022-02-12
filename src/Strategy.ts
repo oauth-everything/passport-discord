@@ -23,15 +23,15 @@ export interface TokenResponse {
 }
 
 export type Profile = OAuth2Profile<User>;
-export type StrategyOptions = ExtendableStrategyOptions<{}>;
-export type StrategyOptionsWithRequest = ExtendableStrategyOptionsWithRequest<{}>;
-export type VerifyCallback<TUser = object, TInfo = object> = OAuth2VerifyCallback<TUser, TInfo>;
+export type StrategyOptions = ExtendableStrategyOptions<Record<string, unknown>>;
+export type StrategyOptionsWithRequest = ExtendableStrategyOptionsWithRequest<Record<string, unknown>>;
+export type VerifyCallback<TUser = Record<string, unknown>, TInfo = Record<string, unknown>> = OAuth2VerifyCallback<TUser, TInfo>;
 export type VerifyFunction<TUser, TInfo> = OAuth2VerifyFunction<Profile, TUser, TInfo>;
 export type VerifyFunctionWithRequest<TUser, TInfo> = OAuth2VerifyFunctionWithRequest<Profile, TUser, TInfo>;
 export type VerifyFunctionWithResults<TUser, TInfo> = OAuth2VerifyFunctionWithResults<TokenResponse, Profile, TUser, TInfo>;
 export type VerifyFunctionWithRequestAndResults<TUser, TInfo> = OAuth2VerifyFunctionWithRequestAndResults<TokenResponse, Profile, TUser, TInfo>;
 
-export class Strategy<TUser = object, TInfo = object> extends OAuth2Strategy {
+export class Strategy<TUser = Record<string, unknown>, TInfo = Record<string, unknown>> extends OAuth2Strategy {
 
     public name = "discord";
 

@@ -2,12 +2,18 @@
     "name": "@oauth-everything/passport-discord",
     "version": "1.0.2",
     "description": "Discord OAuth 2.0 strategy for Passport.js",
-    "main": "./dist/index.js",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.js",
     "types": "./dist/index.d.ts",
+    "files": [
+        "dist/"
+    ],
     "scripts": {
         "lint": "eslint ./src/**/*.ts",
-        "build": "tsc -p .",
+        "build:types": "tsc --declaration --outDir ./dist/ --emitDeclarationOnly",
+        "build": "npm run build:types && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
         "clean": "rimraf dist",
+        "prepublishOnly": "npm run build",
         "build-full": "npm run clean && npm run lint && npm run build"
     },
     "repository": {
