@@ -29,14 +29,14 @@ passport.deserializeUser((id: string, done) => {
 passport.use(new Strategy(
     {
         // The Client Id for your discord application (See "Discord Application Setup")
-        clientID: "wumpus",
+        clientID: process.env.DISCORD_CLIENT_ID ?? "wumpus",
 
         // The Client Secret for your discord application (See "Discord Application Setup")
-        clientSecret: "supmuw",
+        clientSecret: process.env.DISCORD_CLIENT_SECRET ?? "supmuw",
 
         // The callback URL - Your app should be accessible on this domain. You can use
         // localhost for testing, just makes sure it's set as a Redirect URL (See "Discord Application Setup")
-        callbackURL: "http://localhost:8080/auth/discord/callback",
+        callbackURL: process.env.DISCORD_CALLBACK_URL ?? "http://localhost:8080/auth/discord/callback",
 
         /* Optional items: */
 
